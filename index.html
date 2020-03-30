@@ -24,11 +24,43 @@
     <div class="wrapper">
         <h1>Just Vibin'</h1>
         <section>
-            <p>some stuff</p>
+            <h2>User Input</h2>
+            <form>
+                <fieldset class="nameVar">
+                    <legend>Enter your character's name</legend>
+                    <label for="firstName">First Name:</label>                
+                    <input type="text" id="firstName" name="firstName" required minlength="4" maxlength="8" size="10">
+
+                    <label for="lastName">Last Name:</label>                
+                    <input type="text" id="lastName" name="lastName" required minlength="4" maxlength="8" size="10">
+                </fieldset>
+
+                <fieldset class="specialtyVar">
+                    <legend>Select your character's specialty:</legend>
+                    <label for="socialGuru">Social Guru</label>
+                    <input type="radio" id="socialGuru" name="specialty" value="socialGuru">
+
+                    <label for="witchcraft">Witchcraft</label>
+                    <input type="radio" id="witchcraft" name="specialty" value="witchcraft">
+
+                    <label for="fitness">Fitness</label>
+                    <input type="radio" id="fitness" name="specialty" value="fitness">
+
+                    <label for="greenThumb">Green Thumb</label>
+                    <input type="radio" id="greenThumb" name="specialty" value="greenThumb">
+
+                    <label for="bookButterfly">Book Butterfly</label>
+                    <input type="radio" id="bookButterfly" name="specialty" value="bookButterfly">
+                </fieldset>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
         </section>
         <section>
-            <p>some stuff</p>
+            <h2>Dynamic User Output</h2>
         </section>
     </div>
+    <script src="functions.js"></script>
 </body>
 </html>
