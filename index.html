@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Just Vibin'</title>
-    <link rel='stylesheet' href='styles.css'>
+    <link rel='stylesheet' href='styles/styles.css'>
 </head>
 <body>
     <div class="wrapper">
@@ -29,28 +29,28 @@
                 <fieldset class="nameVar">
                     <legend>Enter your character's name</legend>
                     <label for="firstName">First Name:</label>                
-                    <input type="text" id="firstName" name="firstName" required minlength="4" maxlength="8" size="10">
+                    <input type="text" id="firstName" name="firstName" required minlength="3" maxlength="10" size="10">
 
                     <label for="lastName">Last Name:</label>                
-                    <input type="text" id="lastName" name="lastName" required minlength="4" maxlength="8" size="10">
+                    <input type="text" id="lastName" name="lastName" required minlength="3" maxlength="15" size="10">
                 </fieldset>
 
                 <fieldset class="specialtyVar">
                     <legend>Select your character's specialty:</legend>
                     <label for="socialGuru">Social Guru</label>
-                    <input type="radio" id="socialGuru" name="specialty" value="socialGuru">
+                    <input type="radio" id="socialGuru" name="specialty" class ="specialtyClass" value="socialGuru">
 
                     <label for="witchcraft">Witchcraft</label>
-                    <input type="radio" id="witchcraft" name="specialty" value="witchcraft">
+                    <input type="radio" id="witchcraft" name="specialty" class ="specialtyClass" value="witchcraft">
 
                     <label for="fitness">Fitness</label>
-                    <input type="radio" id="fitness" name="specialty" value="fitness">
+                    <input type="radio" id="fitness" name="specialty" class ="specialtyClass" value="fitness">
 
                     <label for="greenThumb">Green Thumb</label>
-                    <input type="radio" id="greenThumb" name="specialty" value="greenThumb">
+                    <input type="radio" id="greenThumb" name="specialty" class ="specialtyClass" value="greenThumb">
 
                     <label for="bookButterfly">Book Butterfly</label>
-                    <input type="radio" id="bookButterfly" name="specialty" value="bookButterfly">
+                    <input type="radio" id="bookButterfly" name="specialty" class ="specialtyClass" value="bookButterfly">
                 </fieldset>
                 <div>
                     <button type="submit">Submit</button>
@@ -59,8 +59,13 @@
         </section>
         <section>
             <h2>Dynamic User Output</h2>
+            <h3 class="firstNameText"></h3>
+            <h3 class="lastNameText"></h3>
+            <p class="specialtyText"></p>
+
         </section>
     </div>
-    <script src="functions.js"></script>
+    <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+    <script src="script.js"></script>
 </body>
 </html>

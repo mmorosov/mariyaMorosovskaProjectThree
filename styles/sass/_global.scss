@@ -1,0 +1,47 @@
+
+body {
+    background-color: mediumseagreen;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 5% auto;
+    padding: 2%;
+    display:flex;
+    flex-wrap:wrap;
+    text-align: center;
+    background-color: #fff;
+}
+
+h1 {
+    width: 100%;
+}
+
+section {
+    width: 50%;
+    background-color: tomato;
+}
+
+section:nth-of-type(2) {
+    background-color: slategray;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.nameVar, .specialtyVar {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 20px;
+    padding: 10px;
+}
+
+
+input, label {
+    margin: 10px 0;
+    width: 50%;
+}
