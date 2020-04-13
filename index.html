@@ -11,8 +11,6 @@
 </head>
 <body>
     <header>
-        <img class="imageOne" src="assets/2.png"></img>
-        <img class="imageTwo" src="assets/5.png"></img>
         <h1>Just Vibin'</h1>
         <p>A <span><em>character creator</em></span> for a game about gaining the highest level of <span><em>chill</em></span>.</p>
     </header>
@@ -60,35 +58,45 @@
                 <fieldset class="skills">
                     <legend>Choose your character's skills (up to three):</legend>
                         <label for="chidori" class="newSkill">
-                            <input type="checkbox" id="chidori" name="newSkill" class="newSkill" value="chidori">
+                            <input type="checkbox" id="chidori" name="newSkill" class="newSkill" value="Chidori">
                             Chidori
                         </label>
                         <label for="fireFist" class="newSkill">
-                            <input type="checkbox" id="fireFist" name="newSkill" class="newSkill" value="fireFist">
-                            FireFist
+                            <input type="checkbox" id="fireFist" name="newSkill" class="newSkill" value="Fire Fist">
+                            Fire Fist
                         </label>
                         <label for="gear" class="newSkill">
-                            <input type="checkbox" id="gear" name="newSkill" class="newSkill" value="gear">
+                            <input type="checkbox" id="gear" name="newSkill" class="newSkill" value="Fourth Gear">
                             Fourth Gear
                         </label>
                         <label for="kamehameha" class="newSkill">
-                            <input type="checkbox" id="kamehameha" name="newSkill" class="newSkill" value="kamehameha">
+                            <input type="checkbox" id="kamehameha" name="newSkill" class="newSkill" value="Kamehameha">
                             Kamehameha
                         </label>
                         <label for="finalFlash" class="newSkill">
-                            <input type="checkbox" id="finalFlash" name="newSkill" class="newSkill" value="finalFlash">
+                            <input type="checkbox" id="finalFlash" name="newSkill" class="newSkill" value="Final Flash">
                             Final Flash
                         </label>
                         <label for="serious" class="newSkill">
-                            <input type="checkbox" id="serious" name="newSkill" class="newSkill" value="serious">
+                            <input type="checkbox" id="serious" name="newSkill" class="newSkill" value="Serious Punch">
                             Serious Punch
                         </label>
                 </fieldset>
                 <div>
-                    <button type="reset" class="reset">Reset</button>
-                    <button type="submit" class="submit">Submit</button>
+                    <button type="reset" id="reset">Reset</button>
+                    <button type="submit" id="submit">Submit</button>
                 </div>
             </form>
+            <div id="resultsModal" class="modalBackground">
+                <div class="heroObject">
+                    <div class="flag"></div>
+                    <h2>Your Hero</h2>
+                    <h3 class="firstNameText"></h3>
+                    <h3 class="lastNameText"></h3>
+                    <p class="specialtyText"></p>
+                    <p class="skillsText"></p>
+                </div>
+            </div>
         </section>
         <section>
             <div class="flag"></div>

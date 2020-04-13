@@ -47,11 +47,25 @@ h2 {
 
 h3 {
     font-size: 5rem;
+    text-transform: capitalize;
+    margin: 10px 0 0 0;
 }
 
 span {
     color: $primary;
     font-size: 1.7rem;
+}
+
+.specialtyText div {
+    border-top: 2px solid $mainText;
+    padding: 10px;
+    margin: 10px;
+    font-size: 2rem;
+}
+
+.skillsText {
+    font-size: 1.2rem;
+    color: $background;
 }
 
 // purple flag element
@@ -66,6 +80,7 @@ span {
     border-left: 25px solid transparent;
 }
 
+// section styling
 section {
     width: 48%;
     padding: 25px 15px;
@@ -78,18 +93,49 @@ section:nth-of-type(2) {
     background-color: $primary;
 }
 
-.imageOne, .imageTwo {
-    width: 300px;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    opacity: 0.8;
+// modal styling
+
+.modalBackground {
+    display:none;
+    position: fixed;
+    z-index: 1;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.6);
 }
 
-.imageOne {
-    left: 0;
+.heroObject {
+    background-color: #fff;
 }
 
-.imageTwo {
-    right: 0;
+.close {
+    color: $primary;
+    float: right;
+    font-size: 2rem;
+}
+
+.close:hover,
+.close:focus {
+    color: $secondary;
+    text-decoration: none;
+}
+
+// media query
+
+@media(max-width: 1000px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .flag {
+        width: 80%;
+    }
 }

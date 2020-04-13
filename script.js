@@ -13,16 +13,13 @@ class Specialty {
     }
 }
 
-const socialGuru = new Specialty('Social', 100, 10, 0, 50, 'socialGuru');
-const witchcraft = new Specialty('Witch', 100, 100, 0, 50, 'witchcraft');
-const fitness = new Specialty('Fit', 100, 100, 0, 50, 'fitness');
-const greenThumb = new Specialty('Planty', 100, 50, 0, 50, 'greenThumb');
-const bookButterfly = new Specialty('Reader', 100, 30, 0, 50, 'bookButterfly');
+const socialGuru = new Specialty('Social', 89, 10, 0, 10, 'socialGuru');
+const witchcraft = new Specialty('Witch', 96, 100, 0, 30, 'witchcraft');
+const fitness = new Specialty('Sporty', 90, 100, 0, 20, 'fitness');
+const greenThumb = new Specialty('Green Thumb', 98, 50, 0, 50, 'greenThumb');
+const bookButterfly = new Specialty('Reads-a-lot', 95, 30, 0, 40, 'bookButterfly');
 
 const specialtyArray = [socialGuru, witchcraft, fitness, greenThumb, bookButterfly]
-
-// Empty Character type 
-
 
 // Assign a namespace object for the app
 const characterApp = {};
@@ -47,6 +44,7 @@ characterApp.getLastName = () => {
     })
 };
 
+// Function to get the hero specialty
 characterApp.getSpecialty = () => {
     $('.specialtyClass').on('click', function(input) {
         hero.specialty = '';        
@@ -58,11 +56,11 @@ characterApp.getSpecialty = () => {
                 if (saveSpecialty.includes(data)) {
                     userSelection = specialtyArray[i];
                     $('.specialtyText').html(`
-                    <div>${userSelection.name}</div> 
-                    <div>${userSelection.health}</div> 
-                    <div>${userSelection.magic}</div> 
-                    <div>${userSelection.chill}</div>
-                    <div>${userSelection.energy}</div>
+                    <div>Specialty: ${userSelection.name}</div> 
+                    <div>Health: ${userSelection.health}</div> 
+                    <div>Magic: ${userSelection.magic}</div> 
+                    <div>Level of chill: ${userSelection.chill}</div>
+                    <div>Energy: ${userSelection.energy}</div>
                     `);
                     hero.specialty = userSelection;               
                 }
@@ -71,35 +69,32 @@ characterApp.getSpecialty = () => {
     })
 };
 
-// function to get three skills values from the checkbox fieldset
+// Function to get three skills values from the checkbox fieldset
 characterApp.getSkills = () => {
-    // hero key for 'skills' set up to save the three inputs into it.
+    // Hero key for 'skills' set up to save the three inputs into it.
     hero.skills = [];
     $('.newSkill').on('click', function (input) {
         if ($(this).is(':checked')) {
             const saveSkills = input.target.value;
-            // push checkbox selections into the array
+            // Push checkbox selections into the array
             // bug: checkbox selections keep appending items to the array
             // solution: need to think of a way fo filter unchecked boxes
             hero.skills.push(saveSkills);
             $('.skillsText').html(`
-            ${hero.skills[0]} 
-            ${hero.skills[1]} 
+            ${hero.skills[0]} |
+            ${hero.skills[1]} |
             ${hero.skills[2]}
             `) 
         }
     })
 };
 
-
-
-
-// when a radio option is checked, change label styling
+// When a radio option is checked, change label styling
 $('input[type=radio]').on('click', function () {
     $(this).parent().addClass('custom').siblings().removeClass('custom');
 });
 
-// only allow three skills checkboxes to remain checked at a time
+// Only allow three skills checkboxes to remain checked at a time
 $('input[type=checkbox]').on('click', function () {
     $(this).parent().toggleClass('custom');
     let checkNum = $("input[type=checkbox]:checked").length >= 3;
@@ -107,7 +102,17 @@ $('input[type=checkbox]').on('click', function () {
 });
 
 // Display user form input in the DOM
-characterApp.displayUserInput = () => {};
+// Here I began to create a modal pop up, however I was unable to solve this item by project deadline. This will require further development.
+characterApp.displayUserInput = (e) => {
+    $('#submit').on('click', function (e) {
+        e.preventDefault();
+        const modal = $('#resultsModal');
+        const submit = $('#submit');
+        const close = $('.close')
+        modal.style.display = "block";
+    });   
+};
+
 
 // Initialize app
 characterApp.init = () => {

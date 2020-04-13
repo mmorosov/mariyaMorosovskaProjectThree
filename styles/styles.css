@@ -286,11 +286,25 @@ h2 {
 
 h3 {
   font-size: 5rem;
+  text-transform: capitalize;
+  margin: 10px 0 0 0;
 }
 
 span {
   color: #E7D39F;
   font-size: 1.7rem;
+}
+
+.specialtyText div {
+  border-top: 2px solid #522D5B;
+  padding: 10px;
+  margin: 10px;
+  font-size: 2rem;
+}
+
+.skillsText {
+  font-size: 1.2rem;
+  color: #D7385E;
 }
 
 .flag {
@@ -316,20 +330,48 @@ section:nth-of-type(2) {
   background-color: #E7D39F;
 }
 
-.imageOne, .imageTwo {
-  width: 300px;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  opacity: 0.8;
-}
-
-.imageOne {
+.modalBackground {
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-.imageTwo {
-  right: 0;
+.heroObject {
+  background-color: #fff;
+}
+
+.close {
+  color: #E7D39F;
+  float: right;
+  font-size: 2rem;
+}
+
+.close:hover,
+.close:focus {
+  color: #FB7B6B;
+  text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  section {
+    width: 100%;
+  }
+  .flag {
+    width: 80%;
+  }
 }
 
 form {
@@ -345,6 +387,7 @@ form {
 }
 
 fieldset {
+  margin-top: 30px;
   margin-bottom: 30px;
   border: none;
   display: -webkit-box;
@@ -383,7 +426,7 @@ label {
   border: 4px solid #522D5B;
 }
 
-button .submit {
+button {
   background-color: #D7385E;
   border: 4px solid #522D5B;
 }
@@ -415,4 +458,20 @@ input.newSkill {
 
 label.specialtyClass:last-of-type {
   margin: 10px 30%;
+}
+
+@media (max-width: 540px) {
+  form {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  input, label, button,
+  label.specialtyClass:last-of-type {
+    width: 90%;
+    margin: 10px auto;
+  }
+  label.newSkill {
+    width: 50%;
+  }
 }
