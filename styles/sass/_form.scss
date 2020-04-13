@@ -1,0 +1,69 @@
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+fieldset {
+    margin-bottom: 30px;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nameVar, .specialtyVar, .skills, form div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+input, label, button {
+    width: 45%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-radius: 20px;
+}
+
+label.newSkill {
+    width: 30%;
+    font-size: 1rem;
+}
+
+label {
+    background-color: $secondary;
+    border: 4px solid $mainText;
+}
+
+button .submit {
+    background-color: $background;
+    border: 4px solid $mainText;
+}
+
+label.specialtyClass:hover,
+label.newSkill:hover,
+.custom {
+    background-color: $mainText;
+    border: 4px solid $secondary;
+    color: $secondary;
+    cursor: pointer;
+}
+
+.nameVar label {
+    background-color: transparent;
+    border:none;
+    border-bottom: 4px solid $mainText;
+}
+
+.nameVar input {
+    padding: 3%;
+}
+
+input.specialtyClass,
+input.newSkill {
+    position: absolute;
+    left: -1000px;
+}
+
+label.specialtyClass:last-of-type {
+    margin: 10px 30%;
+}

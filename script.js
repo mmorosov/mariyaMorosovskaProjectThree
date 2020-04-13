@@ -57,7 +57,13 @@ characterApp.getSpecialty = () => {
                 const data = specialtyArray[i].value;              
                 if (saveSpecialty.includes(data)) {
                     userSelection = specialtyArray[i];
-                    $('.specialtyText').html(`${userSelection.name}, ${userSelection.health}, ${userSelection.magic}, ${userSelection.chill}`);
+                    $('.specialtyText').html(`
+                    <div>${userSelection.name}</div> 
+                    <div>${userSelection.health}</div> 
+                    <div>${userSelection.magic}</div> 
+                    <div>${userSelection.chill}</div>
+                    <div>${userSelection.energy}</div>
+                    `);
                     hero.specialty = userSelection;               
                 }
             }
@@ -65,8 +71,40 @@ characterApp.getSpecialty = () => {
     })
 };
 
+// function to get three skills values from the checkbox fieldset
+characterApp.getSkills = () => {
+    // hero key for 'skills' set up to save the three inputs into it.
+    hero.skills = [];
+    $('.newSkill').on('click', function (input) {
+        if ($(this).is(':checked')) {
+            const saveSkills = input.target.value;
+            // push checkbox selections into the array
+            // bug: checkbox selections keep appending items to the array
+            // solution: need to think of a way fo filter unchecked boxes
+            hero.skills.push(saveSkills);
+            $('.skillsText').html(`
+            ${hero.skills[0]} 
+            ${hero.skills[1]} 
+            ${hero.skills[2]}
+            `) 
+        }
+    })
+};
 
-// creating a loop for this > forEach (input) insert function
+
+
+
+// when a radio option is checked, change label styling
+$('input[type=radio]').on('click', function () {
+    $(this).parent().addClass('custom').siblings().removeClass('custom');
+});
+
+// only allow three skills checkboxes to remain checked at a time
+$('input[type=checkbox]').on('click', function () {
+    $(this).parent().toggleClass('custom');
+    let checkNum = $("input[type=checkbox]:checked").length >= 3;
+    $('input[type=checkbox]').not(':checked').attr('disabled', checkNum);
+});
 
 // Display user form input in the DOM
 characterApp.displayUserInput = () => {};
@@ -76,6 +114,7 @@ characterApp.init = () => {
     characterApp.getFirstName();
     characterApp.getLastName();
     characterApp.getSpecialty();
+    characterApp.getSkills();
     characterApp.displayUserInput();
 }
 

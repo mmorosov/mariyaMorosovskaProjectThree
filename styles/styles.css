@@ -235,35 +235,101 @@ html {
   overflow: hidden;
 }
 
+* {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 body {
-  background-color: mediumseagreen;
+  background-color: #D7385E;
+  font-family: "Prata", serif;
+  color: #522D5B;
 }
 
 .wrapper {
   width: 90%;
   max-width: 1200px;
-  margin: 5% auto;
-  padding: 2%;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   text-align: center;
-  background-color: #fff;
+  background-color: none;
 }
 
-h1 {
-  width: 100%;
+header {
+  width: 50%;
+  margin: 50px auto;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+h1, h2 {
+  font-family: "Leckerli One", cursive;
+  color: #E7D39F;
+  font-size: 4rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 3rem;
+  padding: 50px auto;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+h3 {
+  font-size: 5rem;
+}
+
+span {
+  color: #E7D39F;
+  font-size: 1.7rem;
+}
+
+.flag {
+  position: absolute;
+  z-index: 0;
+  width: 35%;
+  margin: 0 3%;
+  border-top: 28px solid #522D5B;
+  border-bottom: 28px solid #522D5B;
+  border-right: 25px solid transparent;
+  border-left: 25px solid transparent;
 }
 
 section {
-  width: 50%;
-  background-color: tomato;
+  width: 48%;
+  padding: 25px 15px;
+  margin-bottom: 50px;
+  border-radius: 5%;
+  background-color: #E7D39F;
 }
 
 section:nth-of-type(2) {
-  background-color: slategray;
+  background-color: #E7D39F;
+}
+
+.imageOne, .imageTwo {
+  width: 300px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  opacity: 0.8;
+}
+
+.imageOne {
+  left: 0;
+}
+
+.imageTwo {
+  right: 0;
 }
 
 form {
@@ -278,17 +344,75 @@ form {
       flex-wrap: wrap;
 }
 
-.nameVar, .specialtyVar {
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nameVar, .specialtyVar, .skills, form div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 10px 20px;
-  padding: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-input, label {
+input, label, button {
+  width: 45%;
+  padding: 10px 0;
   margin: 10px 0;
-  width: 50%;
+  border-radius: 20px;
+}
+
+label.newSkill {
+  width: 30%;
+  font-size: 1rem;
+}
+
+label {
+  background-color: #FB7B6B;
+  border: 4px solid #522D5B;
+}
+
+button .submit {
+  background-color: #D7385E;
+  border: 4px solid #522D5B;
+}
+
+label.specialtyClass:hover,
+label.newSkill:hover,
+.custom {
+  background-color: #522D5B;
+  border: 4px solid #FB7B6B;
+  color: #FB7B6B;
+  cursor: pointer;
+}
+
+.nameVar label {
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px solid #522D5B;
+}
+
+.nameVar input {
+  padding: 3%;
+}
+
+input.specialtyClass,
+input.newSkill {
+  position: absolute;
+  left: -1000px;
+}
+
+label.specialtyClass:last-of-type {
+  margin: 10px 30%;
 }

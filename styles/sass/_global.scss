@@ -1,47 +1,95 @@
+// main layout
+* {
+    transition: 0.5s;
+}
 
 body {
-    background-color: mediumseagreen;
+    background-color: $background;
+    font-family: $plain;
+    color: $mainText;
 }
 
 .wrapper {
     width: 90%;
     max-width: 1200px;
-    margin: 5% auto;
-    padding: 2%;
+    margin: 0 auto;
+
     display:flex;
     flex-wrap:wrap;
+    justify-content: space-between;
+
     text-align: center;
-    background-color: #fff;
+    background-color: none;
 }
 
-h1 {
-    width: 100%;
+header {
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+// typography
+h1, h2 {
+    font-family: $decorative;
+    color: $primary;
+    font-size: 4rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+    padding: 50px auto;
+    margin-bottom: 25px;
+    position: relative; 
+}
+
+h3 {
+    font-size: 5rem;
+}
+
+span {
+    color: $primary;
+    font-size: 1.7rem;
+}
+
+// purple flag element
+.flag{
+    position: absolute;
+    z-index: 0;
+    width: 35%;
+    margin: 0 3%;
+    border-top: 28px solid $mainText;
+    border-bottom: 28px solid $mainText;
+    border-right: 25px solid transparent;
+    border-left: 25px solid transparent;
 }
 
 section {
-    width: 50%;
-    background-color: tomato;
+    width: 48%;
+    padding: 25px 15px;
+    margin-bottom: 50px;
+    border-radius: 5%;
+    background-color: $primary;
 }
 
 section:nth-of-type(2) {
-    background-color: slategray;
+    background-color: $primary;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+.imageOne, .imageTwo {
+    width: 300px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    opacity: 0.8;
 }
 
-.nameVar, .specialtyVar {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px 20px;
-    padding: 10px;
+.imageOne {
+    left: 0;
 }
 
-
-input, label {
-    margin: 10px 0;
-    width: 50%;
+.imageTwo {
+    right: 0;
 }

@@ -1,16 +1,3 @@
-
-<!-- // Character Builder - Project 3
-
-// Minimum Viable Project 
-
-// 1. Input text: User inputs character text
-// 2. Dropdown: User picks Character type
-// 3. Fieldset > input number: User has 15 tokens to assign to Character
-// 4. Submit: User clicks submit and information with details and short write-up appears in DOM
-// 5. Reset > clear form: If a user wants to create another character, they click 'Create New Character' and the form resets
-
-// Extension Goals -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Just Vibin'</title>
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='styles/styles.css'>
 </head>
 <body>
-    <div class="wrapper">
+    <header>
+        <img class="imageOne" src="assets/2.png"></img>
+        <img class="imageTwo" src="assets/5.png"></img>
         <h1>Just Vibin'</h1>
+        <p>A <span><em>character creator</em></span> for a game about gaining the highest level of <span><em>chill</em></span>.</p>
+    </header>
+    <div class="wrapper">
         <section>
-            <h2>User Input</h2>
+            <div class="flag"></div>
+            <h2>Build-a-thon</h2>
             <form>
                 <fieldset class="nameVar">
-                    <legend>Enter your character's name</legend>
+                    <legend>Enter your character's name:</legend>
                     <label for="firstName">First Name:</label>                
                     <input type="text" id="firstName" name="firstName" required minlength="3" maxlength="10" size="10">
 
@@ -36,32 +31,72 @@
                 </fieldset>
 
                 <fieldset class="specialtyVar">
-                    <legend>Select your character's specialty:</legend>
-                    <label for="socialGuru">Social Guru</label>
-                    <input type="radio" id="socialGuru" name="specialty" class ="specialtyClass" value="socialGuru">
+                    <legend>Select your character's specialty (one):</legend>
+                    <label for="socialGuru" class="specialtyClass">
+                        <input type="radio" id="socialGuru" name="specialty" class="specialtyClass" value="socialGuru">
+                        Social Guru
+                    </label>
 
-                    <label for="witchcraft">Witchcraft</label>
-                    <input type="radio" id="witchcraft" name="specialty" class ="specialtyClass" value="witchcraft">
+                    <label for="witchcraft" class ="specialtyClass">
+                        <input type="radio" id="witchcraft" name="specialty" class="specialtyClass" value="witchcraft">
+                        Witchcraft
+                    </label>
 
-                    <label for="fitness">Fitness</label>
-                    <input type="radio" id="fitness" name="specialty" class ="specialtyClass" value="fitness">
+                    <label for="fitness" class ="specialtyClass">
+                        <input type="radio" id="fitness" name="specialty" class="specialtyClass" value="fitness">
+                        Sporty Spice
+                    </label>
 
-                    <label for="greenThumb">Green Thumb</label>
-                    <input type="radio" id="greenThumb" name="specialty" class ="specialtyClass" value="greenThumb">
+                    <label for="greenThumb" class ="specialtyClass">
+                        <input type="radio" id="greenThumb" name="specialty" class="specialtyClass" value="greenThumb">
+                        Green Thumb
+                    </label>
 
-                    <label for="bookButterfly">Book Butterfly</label>
-                    <input type="radio" id="bookButterfly" name="specialty" class ="specialtyClass" value="bookButterfly">
+                    <label for="bookButterfly" class ="specialtyClass">
+                        <input type="radio" id="bookButterfly" name="specialty" class="specialtyClass" value="bookButterfly">
+                        Book Butterfly
+                    </label>
+                </fieldset>
+                <fieldset class="skills">
+                    <legend>Choose your character's skills (up to three):</legend>
+                        <label for="chidori" class="newSkill">
+                            <input type="checkbox" id="chidori" name="newSkill" class="newSkill" value="chidori">
+                            Chidori
+                        </label>
+                        <label for="fireFist" class="newSkill">
+                            <input type="checkbox" id="fireFist" name="newSkill" class="newSkill" value="fireFist">
+                            FireFist
+                        </label>
+                        <label for="gear" class="newSkill">
+                            <input type="checkbox" id="gear" name="newSkill" class="newSkill" value="gear">
+                            Fourth Gear
+                        </label>
+                        <label for="kamehameha" class="newSkill">
+                            <input type="checkbox" id="kamehameha" name="newSkill" class="newSkill" value="kamehameha">
+                            Kamehameha
+                        </label>
+                        <label for="finalFlash" class="newSkill">
+                            <input type="checkbox" id="finalFlash" name="newSkill" class="newSkill" value="finalFlash">
+                            Final Flash
+                        </label>
+                        <label for="serious" class="newSkill">
+                            <input type="checkbox" id="serious" name="newSkill" class="newSkill" value="serious">
+                            Serious Punch
+                        </label>
                 </fieldset>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button type="reset" class="reset">Reset</button>
+                    <button type="submit" class="submit">Submit</button>
                 </div>
             </form>
         </section>
         <section>
-            <h2>Dynamic User Output</h2>
+            <div class="flag"></div>
+            <h2>Your Profile</h2>
             <h3 class="firstNameText"></h3>
             <h3 class="lastNameText"></h3>
             <p class="specialtyText"></p>
+            <p class="skillsText"></p>
 
         </section>
     </div>
