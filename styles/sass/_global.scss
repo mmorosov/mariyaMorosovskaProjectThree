@@ -27,6 +27,10 @@ header {
     margin: 50px auto;
     text-align: center;
     font-size: 1.5rem;
+
+    p {
+        color: $anotherColor;
+    }
 }
 
 // typography
@@ -74,10 +78,17 @@ span {
     z-index: 0;
     width: 35%;
     margin: 0 3%;
-    border-top: 28px solid $mainText;
-    border-bottom: 28px solid $mainText;
+    border-top: 28px solid $anotherColor;
+    border-bottom: 28px solid $anotherColor;
     border-right: 25px solid transparent;
     border-left: 25px solid transparent;
+
+}
+
+@media (min-width: 1300px) {
+    .flag {
+        width: 25%;
+    }
 }
 
 // section styling
@@ -85,7 +96,7 @@ section {
     width: 48%;
     padding: 25px 15px;
     margin-bottom: 50px;
-    border-radius: 5%;
+    border-radius: 5px;
     background-color: $primary;
 }
 
@@ -99,8 +110,9 @@ section:nth-of-type(2) {
     display:none;
     position: fixed;
     z-index: 1;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
+    // transform: translate(50px, 50%);
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -108,8 +120,15 @@ section:nth-of-type(2) {
     background-color: rgba(0,0,0,0.6);
 }
 
-.heroObject {
+.modalContent {
     background-color: #fff;
+    position: fixed;
+    // z-index: 1;
+    left: 15%;
+    top: 50px;
+    // transform: translate(50px, 50%);
+    width: 70%;
+    height: 100%;
 }
 
 .close {
@@ -138,4 +157,21 @@ section:nth-of-type(2) {
     .flag {
         width: 80%;
     }
+}
+
+/* The Close Button */
+.close {
+  color: green;
+  float: right;
+  font-size: 3rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }

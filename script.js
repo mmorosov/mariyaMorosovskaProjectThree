@@ -64,30 +64,34 @@ characterApp.getSpecialty = () => {
                     `);
                     hero.specialty = userSelection;               
                 }
-            }
+            } hero.specialty = userSelection;      
         }
     })
 };
 
-// Function to get three skills values from the checkbox fieldset
-characterApp.getSkills = () => {
-    // Hero key for 'skills' set up to save the three inputs into it.
-    hero.skills = [];
-    $('.newSkill').on('click', function (input) {
-        if ($(this).is(':checked')) {
-            const saveSkills = input.target.value;
-            // Push checkbox selections into the array
-            // bug: checkbox selections keep appending items to the array
-            // solution: need to think of a way fo filter unchecked boxes
-            hero.skills.push(saveSkills);
+// This array will store the values of the "checked" vehicle checkboxes
+hero.skills = [];
+
+hero.skills = characterApp.getSkills = () => {
+    $(".checkbox").click(function () {
+        hero.skills = [];
+        $(".checkbox").each(function () {
+        if ($(this).is(":checked"))
+            hero.skills.push($(this).val());
+            return hero.skills;
+        });
+        // alert(values);
+        hero.skills.forEach(() => {
             $('.skillsText').html(`
-            ${hero.skills[0]} |
-            ${hero.skills[1]} |
-            ${hero.skills[2]}
-            `) 
-        }
-    })
-};
+            ${hero.skills}
+            `)
+        })
+        return hero.skills;
+    });
+}
+
+// hero.skills = characterApp.getSkills();
+
 
 // When a radio option is checked, change label styling
 $('input[type=radio]').on('click', function () {
@@ -104,13 +108,29 @@ $('input[type=checkbox]').on('click', function () {
 // Display user form input in the DOM
 // Here I began to create a modal pop up, however I was unable to solve this item by project deadline. This will require further development.
 characterApp.displayUserInput = (e) => {
+    // Get the modal
+    const modal = document.getElementById("resultsModal");
+    // // Get the <span> element that closes the modal
+    const span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
     $('#submit').on('click', function (e) {
         e.preventDefault();
-        const modal = $('#resultsModal');
-        const submit = $('#submit');
-        const close = $('.close')
-        modal.style.display = "block";
-    });   
+        // modal.style.display = "block";
+        $('#resultsModal').css('display', 'block')
+    });
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        $('#resultsModal').css('display', 'none');
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            $('#resultsModal').css('display', 'none');
+        }
+    }
 };
 
 
@@ -121,6 +141,8 @@ characterApp.init = () => {
     characterApp.getSpecialty();
     characterApp.getSkills();
     characterApp.displayUserInput();
+    console.log(hero)
+    // characterApp.closeModal();
 }
 
 // Document ready

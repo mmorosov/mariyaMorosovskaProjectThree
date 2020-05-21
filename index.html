@@ -55,30 +55,30 @@
                         Book Butterfly
                     </label>
                 </fieldset>
-                <fieldset class="skills">
+                <fieldset class="skills" id="skills">
                     <legend>Choose your character's skills (up to three):</legend>
                         <label for="chidori" class="newSkill">
-                            <input type="checkbox" id="chidori" name="newSkill" class="newSkill" value="Chidori">
+                            <input type="checkbox" class="checkbox" id="chidori" name="newSkill" value="Chidori">
                             Chidori
                         </label>
                         <label for="fireFist" class="newSkill">
-                            <input type="checkbox" id="fireFist" name="newSkill" class="newSkill" value="Fire Fist">
+                            <input type="checkbox"  class="checkbox" id="fireFist" name="newSkill" value="Fire Fist">
                             Fire Fist
                         </label>
                         <label for="gear" class="newSkill">
-                            <input type="checkbox" id="gear" name="newSkill" class="newSkill" value="Fourth Gear">
+                            <input type="checkbox" class="checkbox" id="gear" name="newSkill" value="Fourth Gear">
                             Fourth Gear
                         </label>
                         <label for="kamehameha" class="newSkill">
-                            <input type="checkbox" id="kamehameha" name="newSkill" class="newSkill" value="Kamehameha">
+                            <input type="checkbox" class="checkbox" id="kamehameha" name="newSkill" value="Kamehameha">
                             Kamehameha
                         </label>
                         <label for="finalFlash" class="newSkill">
-                            <input type="checkbox" id="finalFlash" name="newSkill" class="newSkill" value="Final Flash">
+                            <input type="checkbox" class="checkbox" id="finalFlash" name="newSkill" value="Final Flash">
                             Final Flash
                         </label>
                         <label for="serious" class="newSkill">
-                            <input type="checkbox" id="serious" name="newSkill" class="newSkill" value="Serious Punch">
+                            <input type="checkbox" class="checkbox" id="serious" name="newSkill" value="Serious Punch">
                             Serious Punch
                         </label>
                 </fieldset>
@@ -88,13 +88,16 @@
                 </div>
             </form>
             <div id="resultsModal" class="modalBackground">
-                <div class="heroObject">
-                    <div class="flag"></div>
-                    <h2>Your Hero</h2>
-                    <h3 class="firstNameText"></h3>
-                    <h3 class="lastNameText"></h3>
-                    <p class="specialtyText"></p>
-                    <p class="skillsText"></p>
+                <div class="modalContent">
+                    <span class="close">&times;</span>
+                    <div class="heroObject">
+                        <!-- <div class="flag"></div> -->
+                        <h2>Your Hero</h2>
+                        <h3 class="firstNameText"></h3>
+                        <h3 class="lastNameText"></h3>
+                        <p class="specialtyText"></p>
+                        <p class="skillsText"></p>
+                    </div>
                 </div>
             </div>
         </section>
